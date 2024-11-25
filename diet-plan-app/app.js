@@ -9,8 +9,9 @@ const flash = require('connect-flash');
 const app = express();
 
 // Import routes
-const authRoutes = require('./routes/auth'); // Authentication routes
-const dietPlanRoutes = require('./routes/dietplans'); // Diet Plan management routes
+const authRoutes = require('./diet-plan-app/routes/auth');
+const dietPlanRoutes = require('./diet-plan-app/routes/dietplans');
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.DATABASE_URL, {
@@ -35,7 +36,7 @@ app.use(flash());
 
 // Passport configuration
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('./models/user'); // User model
+const User = require('./diet-plan-app/models/user'); // User model
 passport.use(new LocalStrategy(async (username, password, done) => {
     try {
         const user = await User.findOne({ username });
