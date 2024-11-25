@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diet Plans</title>
+</head>
+<body>
+    <h1>Your Diet Plans</h1>
+    <a href="/dietplans/new">Add a New Plan</a>
+    <ul>
+        <% dietPlans.forEach(plan => { %>
+            <li>
+                <strong><%= plan.title %></strong>: <%= plan.description %>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

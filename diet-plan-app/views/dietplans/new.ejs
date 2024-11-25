@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Diet Plan</title>
+</head>
+<body>
+    <h1>Create Diet Plan</h1>
+    <form action="/dietPlans" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required></textarea>
+        <br>
+        <label for="meals">Meals:</label>
+        <input type="text" name="meals" id="meals" placeholder="Comma-separated (e.g., Breakfast: Eggs, Toast)">
+        <br>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
